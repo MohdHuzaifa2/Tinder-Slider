@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+ margin: 0;
+ padding: 0;
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+ transition: all 0.5s;
+ font-family: "Inter", sans-serif;
+ user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: scale(0.85) rotate(0deg);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+.card:first-child {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: scale(1) rotate(0deg);
+  /* transform-origin: center !important; */
+}
+
+/* .card:nth-child(2) {
+  max-width: calc(100% - 20px);
+  max-height: calc(100% - 20px);
+  top: 10px;
+  left: 10px;
+} */
+
+.card .overlay {
+  width: 100%;
+  height: 175px;
+  background: linear-gradient(to top, #000, #000000AD 70%, transparent);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 0 0 15px 15px;
+  padding: 40px 20px;
+  color: white ;
+  font-size: 26px;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.like {
+  padding: 5px 10px;
+  background: green;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 10%;
+  left: 15px;
+  transform: rotate(-30deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.nope {
+  padding: 5px 10px;
+  background: red;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 10%;
+  right: 15px;
+  transform: rotate(30deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  z-index: 100;
+}
+
+.indicators * {
+  transition-duration: 0s;
+  pointer-events: none;
+}
+
+.close {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color: red;
+  border: 2px solid red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0s;
+}
+
+.heart {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color: green;
+  border: 2px solid green;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0s;
+}
+
+.heart.active {
+  background: green;
+  color: white;
+}
+
+.close.active {
+  background: red;
+  color: white;
+}
+
+.container:has(>.card:active) { 
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.85);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.undraggable {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: lightgrey;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-size: 20px;
+  text-align: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: scale(0.85) rotate(0deg);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
